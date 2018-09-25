@@ -68,12 +68,14 @@ OCTAGON is a GUI for playing UCI chess engine tournaments.
 
 Octagon is divided into two separate parts, the GUI which runs on your browser, and the tournament engine which runs on a console window.
 
-To run an Octagon tournament you need to follow these steps:
+Once you have python and the necessary python libraries correctly installed in your syste, to run an Octagon tournament you need to follow these steps:
 
-- Create your engine configuration files
-- Create a tournament configuration file
-- Run the octagon.py engine on a console
-- Open the GUI in your browser
+---
+1. Create your engine configuration files
+2. Create a tournament configuration file
+3. Run the octagon.py engine on a console
+4. Open the [index.html](index.html) GUI in your browser
+---
 
 In the future these steps will be streamlined. Ideally you will just have to click on an icon and you will be able to configure everything from the GUI.
 
