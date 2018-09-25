@@ -147,7 +147,7 @@ lc0-11250.json:
     }
 }
 ```
-Notice how the qoutes in the path and argument fields need to be escaped characters by the use of the backslash.
+Notice how the quotes in the path and argument fields need to be escaped characters by the use of the backslash.
 
 If the `logo path` is empty, no engine image will be loaded. In the examples, the `logo path` is relative to the folder where octagon.py resides. The `logo/` folder is the preferred location for the engine logos.
 
@@ -207,12 +207,10 @@ Here is a template:
     "openings random": true,
     "openings ply": 2,
 
-    "adjudicate win": true,
     "min win move": 0,
     "min win score": 5.5,
     "win move length": 5,
 
-    "adjudicate draw": true,
     "min draw move": 30,
     "max draw score": 0.1,
     "draw move length": 4,
@@ -224,6 +222,12 @@ Here is a template:
 If the `PGN path` is empty, the tournament PGN will be saved in the local PGN folder using the tournament name as filename. 
 
 If the `openings path` is empty, no openings will be used.
+
+The `challengers` parameter is the number of engines that will challenge the Gauntlet field. The engines are picked in the order they appear in the tournament file.
+
+The `rounds` parameter assumes each engine will play each other both as white and as black. Octagon will generate pairings using the closest highest even number.
+
+To disable **adjudication** set the `"win move length": 0` or `"draw move length": 0`.
 
 ## 6. Run octagon.py
 
@@ -238,11 +242,3 @@ Under Windows you can just double-click on [OCTAGON.bat](OCTAGON.BAT)
 ## 7. Open GUI
 
 Open [index.html](index.html) in your browser, double-clicking should suffice.
-
-
-
-
-
-
-
-
