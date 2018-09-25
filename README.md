@@ -71,10 +71,10 @@ Octagon is divided into two separate parts, the GUI which runs on your browser, 
 Once you have python and the necessary python libraries correctly installed in your syste, to run an Octagon tournament you need to follow these steps:
 
 ---
-1. Create your engine configuration files
-2. Create a tournament configuration file
-3. Run the octagon.py engine on a console
-4. Open the [index.html](index.html) GUI in your browser
+1. Create your engine JSON configuration files
+2. Create a tournament JSON configuration file
+3. Run the **octagon.py** engine on a console
+4. Open the **index.html** GUI in your browser
 ---
 
 In the future these steps will be streamlined. Ideally you will just have to click on an icon and you will be able to configure everything from the GUI.
@@ -239,8 +239,8 @@ Open a console window and type:
 python octagon.p
 ```
 
-Under Windows you can just double-click on [OCTAGON.bat](OCTAGON.BAT)
+Under Windows you can just double-click on **OCTAGON.bat**
 
 ## 7. Open GUI
 
-Open [index.html](index.html) in your browser, double-clicking should suffice.
+Open **index.html** in your browser, double-clicking should suffice.
