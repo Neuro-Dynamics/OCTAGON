@@ -1,15 +1,14 @@
-# OCTAGON Chess Tournament GUI
-*version 0.01 ALPHA*
+# OCTAGON Chess Tournament GUI 
+### version 0.01 ALPHA by Alain Bellon
 
 >## Disclaimer
 >This is early alpha software so it is undergoing aggressive feature addition and changes. It needs much refactoring, validation and error handling. Please refer to the license for terms of usage.
 
-
 ## What is OCTAGON
 
-OCTAGON is a GUI for playing UCI chess engine tournaments. 
+OCTAGON is a GUI for playing UCI chess engine tournaments.
 
-### OCTAGON philosophy:
+### OCTAGON philosophy
 
 - Functionality
     - Innovative specialized features (Lc0)
@@ -26,6 +25,7 @@ OCTAGON is a GUI for playing UCI chess engine tournaments.
 ## Features
 
 ### Tournament Engine
+
 - Runs in a browser (but you have to install Python)
 - Runs UCI chess engines with command line arguments and UCI options
 - Round-Robin or Gauntlet modes
@@ -42,6 +42,7 @@ OCTAGON is a GUI for playing UCI chess engine tournaments.
 - Outputs verbose PGN with engine data, and compact PGN only with moves
 
 ### User Interface
+
 - Chess piece animation and movement indicators for easy game following
 - Collapsible panes
 - Single screen design for video streaming
@@ -71,10 +72,12 @@ Octagon is divided into two separate parts, the GUI which runs on your browser, 
 Once you have python and the necessary python libraries correctly installed in your system, to run an Octagon tournament you need to follow these steps:
 
 ---
+
 1. Create your engine JSON configuration files
 2. Create a tournament JSON configuration file
 3. Run the **octagon.py** engine
 4. Open the **index.html** GUI in your browser
+
 ---
 
 In the future these steps will be streamlined. Ideally you will just have to click on an icon and you will be able to configure everything from the GUI.
@@ -104,7 +107,7 @@ Download and install Python 3: [https://www.python.org/downloads/](https://www.p
 ```
 pip install python-chess
 ```
-    
+
 ## 3. Install Tornado
 
 ```
@@ -120,8 +123,9 @@ The engine configuration files preferred location is inside the `tournament/engi
 Here are the example templates:
 
 ---
-SF8.json: 
-```
+SF8.json:
+
+```JSON
 {
     "name":"Stockfish 8",
     "rating":3423,
@@ -133,8 +137,10 @@ SF8.json:
     }
 }
 ```
+
 ---
-```
+
+```JSON
 {
     "name":"Fire7.1",
     "rating":3339,
@@ -146,9 +152,11 @@ SF8.json:
     }
 }
 ```
+
 ---
 lc0-11250.json:
-```
+
+```JSON
 {
     "name":"Lc0 0.18 11250",
     "rating":3400,
@@ -161,6 +169,7 @@ lc0-11250.json:
     }
 }
 ```
+
 Notice how the quotes in the path and argument fields need to be escaped characters by the use of the backslash.
 
 If the `logo path` is empty, no engine image will be loaded. In the examples, the `logo path` is relative to the folder where octagon.py resides. The `logo/` folder is the preferred location for the engine logos.
@@ -171,10 +180,9 @@ Tournament configuration files are also JSON files. The tournament files preferr
 
 If you want to create your own tournament configuration files, just make sure you enter their path as an argument in the next step.
 
-
 Here is a template:
 
-```
+```JSON
 {
     "name": "lc0 11250 vs SF8 vs Fire7.1 Gauntlet",
     "description": "GPU vs 1 CPU thread",
@@ -189,31 +197,30 @@ Here is a template:
 
     "engines": [
 
-        { 
+        {
             "file": "tournaments/engines/lc0-11250.json",
             "nodes control": false,
             "moves": 0,
             "time": 1,
             "increment": 1,
-            "nodes": 0 
+            "nodes": 0
         },
 
-        { 
+        {
             "file": "tournaments/engines/SF8.json",
             "nodes control": false,
             "moves": 0,
             "time": 1,
             "increment": 0.5,
-            "nodes": 0 
+            "nodes": 0
         },
-        
-        { 
+        {
             "file": "tournaments/engines/Fire7.1.json",
             "nodes control": false,
             "moves": 0,
             "time": 1,
             "increment": 0.5,
-            "nodes": 0 
+            "nodes": 0
         }
 
     ],
@@ -235,7 +242,7 @@ Here is a template:
 }
 ```
 
-If the `PGN path` is empty, the tournament PGN will be saved in the local PGN folder using the tournament name as filename. 
+If the `PGN path` is empty, the tournament PGN will be saved in the local PGN folder using the tournament name as filename.
 
 If the `openings path` is empty, no openings will be used.
 
@@ -250,8 +257,9 @@ To disable **adjudication** set the `"win move length": 0` or `"draw move length
 If you just edited the included `tournament.json` file, just open a console window and type:
 
 ```
-python octagon.py 
+python octagon.py
 ```
+
 ---
 
 If you have created your own tournament configuration file then type:
@@ -260,7 +268,7 @@ If you have created your own tournament configuration file then type:
 python octagon.py <myPath/myTournament.json>
 ```
 
-Ommiting the path argument, will run the `tournament/tournament.json` file by default. 
+Ommiting the path argument, will run the `tournament/tournament.json` file by default.
 
 ## 7. Open GUI
 
