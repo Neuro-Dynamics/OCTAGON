@@ -73,7 +73,7 @@ Once you have python and the necessary python libraries correctly installed in y
 ---
 1. Create your engine JSON configuration files
 2. Create a tournament JSON configuration file
-3. Run the **octagon.py** engine on a console with the tournament JSON file path as argument
+3. Run the **octagon.py** engine
 4. Open the **index.html** GUI in your browser
 ---
 
