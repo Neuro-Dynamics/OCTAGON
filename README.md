@@ -140,6 +140,8 @@ SF8.json:
 
 ---
 
+Fire7.1.json:
+
 ```JSON
 {
     "name":"Fire7.1",
@@ -176,7 +178,7 @@ If the `logo path` is empty, no engine image will be loaded. In the examples, th
 
 ## 5. Create tournament configuration file
 
-Tournament configuration files are also JSON files. The tournament files preferred location is in the `tournament/` folder. In this folder you will find a `tournament.json` file. This file is used as default when no arguments are entered when running `octagon.py`. The easiest way to get started is to edit this `tournaments/tournament.json` file to suit your needs. 
+Tournament configuration files are also JSON files. The tournament files preferred location is in the `tournament/` folder. In this folder you will find a `tournament.json` file. This file is used as default when no arguments are entered when running `octagon.py`. The easiest way to get started is to edit this `tournaments/tournament.json` file to suit your needs.
 
 If you want to create your own tournament configuration files, just make sure you enter their path as an argument in the next step.
 
