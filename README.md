@@ -68,12 +68,12 @@ OCTAGON is a GUI for playing UCI chess engine tournaments.
 
 Octagon is divided into two separate parts, the GUI which runs on your browser, and the tournament engine which runs on a console window.
 
-Once you have python and the necessary python libraries correctly installed in your syste, to run an Octagon tournament you need to follow these steps:
+Once you have python and the necessary python libraries correctly installed in your system, to run an Octagon tournament you need to follow these steps:
 
 ---
 1. Create your engine JSON configuration files
 2. Create a tournament JSON configuration file
-3. Run the **octagon.py** engine on a console
+3. Run the **octagon.py** engine on a console with the tournament JSON file path as argument
 4. Open the **index.html** GUI in your browser
 ---
 
@@ -83,29 +83,41 @@ In the future these steps will be streamlined. Ideally you will just have to cli
 
 - If you close the browser GUI, the console will be paused and resume as soon as you open the index.html file again. 
 
-- If you break the execution on the console ( ctrl-Break in Windows ), the current game will be halted, but will resume if you run octagon.py again, and refresh the browser GUI. Tournaments can be suspended this way and resumed at a later point. The tournament will replay the last incomplete game.
+- If you break the execution on the console ( ctrl-Break in Windows ), the current game will be halted and discarded, but the tournament will resume if you run octagon.py again, and refresh the browser GUI. Tournaments can be suspended this way and resumed at a later point. The tournament will replay the last incomplete game.
 
 - You can also pause a game by pausing execution on the console ( Pause in windows ). Un-pausing the execution (ctrl-z in Windows ), will resume the game if the GUI is still running on the browser.
 
 - If you make changes to the engine configuration files or the tournament file, the changes will be reflected after the next game starts. (Some changes that do not involve engine parameters or regeneration of the tournament pairings will be updated if you refresh the GUI)
 
+- OCTAGON is **not yet capable of running multiple instances**. Make sure you do not have more than a **single Octagon GUI open** on your browser. 
+
 ## Getting Started
 
-Here are the steps to get Octagon running.
+Here are the steps to get Octagon running:
 
-## 1. Install Python 3.6.x
+## 1. Install Python 3
+
+Download and install Python 3: [https://www.python.org/downloads/](https://www.python.org/downloads/)
 
 ## 2. Install Python-Chess
+
+```
+pip install python-chess
+```
     
 ## 3. Install Tornado
+
+```
+pip install tornado==3.2.1
+```
 
 ## 4. Create engine configuration files
 
 Engine configuration files are JSON files that contain all the information you need to send Octagon to run your engine. 
 
-The engine configuration files preferred location is inside the `tournament/engines/` folder.
+The engine configuration files preferred location is inside the `tournament/engines/` folder. In the `tournament/engines/` folder you will find 3 sample configuration files. You must change the paths and other fields to match your engine software and preferences.
 
-Here are a couple of templates:
+Here are the example templates:
 
 ---
 SF8.json: 
@@ -130,7 +142,7 @@ SF8.json:
     "path":"C:/Chess Engines/Fire/Fire_7.1_x64.exe",
     "args":"",
     "options":{
-        "Threads":1
+        "Threads":4
     }
 }
 ```
@@ -155,7 +167,9 @@ If the `logo path` is empty, no engine image will be loaded. In the examples, th
 
 ## 5. Create tournament configuration file
 
-Tournament configuration files are also JSON files. The tournament files preferred location is in the `tournament/` folder.
+Tournament configuration files are also JSON files. The tournament files preferred location is in the `tournament/` folder. In this folder you will find a `tournament.json` file. This file is used as default when no arguments are entered when running `octagon.py`. The easiest way to get started is to edit this `tournaments/tournament.json` file to suit your needs. 
+
+If you want to create your own tournament configuration files, just make sure you enter their path as an argument in the next step.
 
 
 Here is a template:
@@ -231,16 +245,23 @@ The `rounds` parameter assumes each engine will play each other both as white an
 
 To disable **adjudication** set the `"win move length": 0` or `"draw move length": 0`.
 
-## 6. Run octagon.py
+## 6. Run octagon.py with path to tournament filename as parameter
 
-Open a console window and type:
+If you just edited the included `tournament.json` file, just open a console window and type:
 
 ```
-python octagon.p
+python octagon.py 
+```
+---
+
+If you have created your own tournament configuration file then type:
+
+```
+python octagon.py <myPath/myTournament.json>
 ```
 
-Under Windows you can just double-click on **OCTAGON.bat**
+Ommiting the path argument, will run the `tournament/tournament.json` file by default. 
 
 ## 7. Open GUI
 
-Open **index.html** in your browser, double-clicking should suffice.
+Open **index.html** in your browser, double-clicking should suffice. Remember to open only one GUI window or tab.
