@@ -153,7 +153,7 @@ lc0-11250.json:
     "name":"Lc0 0.18 11250",
     "rating":3400,
     "logo path":"logos/lc0.png",
-    "path":"C:/Chess Engines//lc0.exe",
+    "path":"C:/Chess Engines/lc0.exe",
     "args":"-w \"C:/Chess Engines/Networks/11250.gz\"",
     "options":{
         "Threads":2,
