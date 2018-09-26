@@ -126,7 +126,7 @@ SF8.json:
     "name":"Stockfish 8",
     "rating":3423,
     "logo path":"logos/SF.png",
-    "path":"C:/Chess Engines/Stockfish/stockfish_8_x64.exe",
+    "path":"C:/Chess Engines/stockfish_8_x64.exe",
     "args":"",
     "options":{
         "Threads":4
@@ -139,7 +139,7 @@ SF8.json:
     "name":"Fire7.1",
     "rating":3339,
     "logo path":"logos/Fire.png",
-    "path":"C:/Chess Engines/Fire/Fire_7.1_x64.exe",
+    "path":"C:/Chess Engines/Fire_7.1_x64.exe",
     "args":"",
     "options":{
         "Threads":4
@@ -153,8 +153,8 @@ lc0-11250.json:
     "name":"Lc0 0.18 11250",
     "rating":3400,
     "logo path":"logos/lc0.png",
-    "path":"C:/Chess Engines/LeelaChessZero/lc0 v0.18.0/lc0.exe",
-    "args":"-w \"C:/Chess Engines/LeelaChessZero/Networks/11250.gz\"",
+    "path":"C:/Chess Engines//lc0.exe",
+    "args":"-w \"C:/Chess Engines/Networks/11250.gz\"",
     "options":{
         "Threads":2,
         "Scale thinking time":3
