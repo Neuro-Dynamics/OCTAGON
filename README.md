@@ -264,4 +264,10 @@ Ommiting the path argument, will run the `tournament/tournament.json` file by de
 
 ## 7. Open GUI
 
-Open **index.html** in your browser, double-clicking should suffice. Remember to open only one GUI window or tab.
+Wait until the console has tested the tournament file and all the UCI engines. When ready, it will display:
+
+    All engines Tested!
+
+    Tournament ready, waiting for GUI...
+
+Once ready, open **index.html** in your browser, double-clicking should suffice. Remember to open only one GUI window or tab.
